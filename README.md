@@ -1,4 +1,4 @@
-# VectorShift Pipeline Builder
+# Pipeline Builder
 
 A full-stack pipeline builder application with a React frontend and a FastAPI backend. Users can visually construct node-based pipelines and validate whether the resulting graph is a Directed Acyclic Graph (DAG).
 

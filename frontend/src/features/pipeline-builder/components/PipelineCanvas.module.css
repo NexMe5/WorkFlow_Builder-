@@ -1,0 +1,32 @@
+.flowShell {
+  width: 100%;
+  height: calc(100vh - 244px);
+  min-height: 560px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.36);
+  border-radius: var(--radius-card);
+  background: var(--surface-canvas);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.72), var(--shadow-panel);
+  transition: height 160ms ease;
+}
+
+.flowShell :global(.react-flow__edge-path) {
+  stroke: var(--color-primary);
+  stroke-width: 2;
+}
+
+.flowShell :global(.react-flow__controls) {
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.16);
+}
+
+.flowShell :global(.react-flow__minimap) {
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: var(--radius-card);
+}
+
+@media (max-width: 720px) {
+  .flowShell { height: 560px; }
+}

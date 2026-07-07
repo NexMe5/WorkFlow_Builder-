@@ -1,0 +1,50 @@
+.toolbar {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+  padding: 6px;
+  border: 1px solid rgba(148, 163, 184, 0.36);
+  border-radius: var(--radius-card);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.group { display: flex; align-items: center; gap: 4px; }
+
+.button {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  flex: 0 0 36px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.button:hover:not(:disabled),
+.button:focus-visible {
+  border-color: #bfdbfe;
+  background: #eff6ff;
+  color: var(--color-primary-dark);
+  outline: none;
+}
+
+.button:disabled { cursor: not-allowed; opacity: 0.34; }
+.nodesButton { display: none; }
+.separator { width: 1px; height: 22px; margin: 0 3px; background: var(--color-border-soft); }
+
+@media (max-width: 720px) {
+  .nodesButton {
+    display: inline-flex;
+    border-color: #bfdbfe;
+    background: #eff6ff;
+    color: var(--color-primary-dark);
+  }
+}

@@ -1,0 +1,14 @@
+frontend/node_modules/
+frontend/.npm-cache/
+frontend/build/
+frontend/frontend-dev.log
+frontend/frontend-dev.err
+frontend/.DS_Store
+
+backend/.venv/
+backend/__pycache__/
+backend/backend-dev.log
+backend/backend-dev.err
+
+tmp/
+.env

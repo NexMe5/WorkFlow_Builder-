@@ -1,0 +1,92 @@
+.palette {
+  width: 100%;
+  margin: 0;
+  padding: 14px;
+  border: 0 solid rgba(148, 163, 184, 0.32);
+  border-bottom-width: 1px;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: none;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.close { display: none; }
+.grid { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.item {
+  min-width: 104px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: var(--radius-card);
+  cursor: grab;
+  user-select: none;
+  background: var(--color-ink);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.14);
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+}
+
+.item:hover {
+  transform: translateY(-1px);
+  border-color: rgba(37, 99, 235, 0.42);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.18);
+}
+
+.dragging { cursor: grabbing; transform: scale(0.98); }
+.data { background: var(--color-teal); }
+.ai { background: var(--color-primary-dark); }
+.logic { background: #9a3412; }
+.output { background: var(--color-text); }
+.source { background: var(--color-ink); }
+
+@media (max-width: 720px) {
+  .palette {
+    position: fixed;
+    z-index: 60;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-height: min(72dvh, 560px);
+    visibility: hidden;
+    overflow-y: auto;
+    padding: 16px;
+    border-width: 1px 0 0;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 -22px 60px rgba(15, 23, 42, 0.22);
+    transform: translateY(calc(100% + 16px));
+    transition: transform 180ms ease, visibility 180ms ease;
+  }
+
+  .open { visibility: visible; transform: translateY(0); }
+  .title { margin-bottom: 12px; }
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .item { min-width: 0; width: 100%; height: 48px; font-size: 12px; }
+
+  .close {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-control);
+    background: #ffffff;
+    color: var(--color-text);
+    cursor: pointer;
+  }
+}

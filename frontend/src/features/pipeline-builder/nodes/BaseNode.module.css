@@ -1,0 +1,100 @@
+.node {
+  position: relative;
+  min-height: 118px;
+  padding: 16px;
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: var(--radius-card);
+  background: var(--surface-card);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-card);
+}
+
+.header { padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid #e2e8f0; }
+.title { font-size: 14px; font-weight: 900; }
+.subtitle { margin-top: 3px; color: var(--color-muted); font-size: 11px; font-weight: 700; }
+.fields { display: grid; gap: 12px; }
+
+.field {
+  display: grid;
+  gap: 6px;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  background: #f8fafc;
+  color: var(--color-ink);
+  outline: none;
+  padding: 9px 10px;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.35;
+  transition: border-color 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.field input,
+.field select { min-height: 38px; }
+
+.field textarea {
+  min-height: 72px;
+  max-height: 260px;
+  resize: none;
+  overflow: hidden;
+  line-height: 1.45;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--color-primary);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.content { color: #475569; font-size: 12px; line-height: 1.5; }
+.port { position: static; }
+
+.handle {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #ffffff;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.24);
+}
+
+.handleLeft { background: #14b8a6; }
+.handleRight { background: var(--color-orange); }
+
+.handleLabel {
+  position: absolute;
+  z-index: 6;
+  top: 50%;
+  max-width: 92px;
+  overflow: hidden;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 999px;
+  background: #ffffff;
+  color: #475569;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1.1;
+  padding: 3px 7px;
+  pointer-events: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.1);
+}
+
+.handleLabelLeft { left: -10px; transform: translate(-100%, -50%); }
+.handleLabelRight { right: -10px; text-align: right; transform: translate(100%, -50%); }
+
+@media (max-width: 720px) {
+  .handleLabelLeft { left: 8px; transform: translate(0, -50%); }
+  .handleLabelRight { right: 8px; transform: translate(0, -50%); }
+}
